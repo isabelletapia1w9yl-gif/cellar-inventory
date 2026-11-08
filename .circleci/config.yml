@@ -1,0 +1,1667 @@
+version: 2.1
+
+jobs:
+  ea-01-c4-5e:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: As a last step swipe the onboarding slides
+          command: |
+            mkdir -p /tmp/box2
+            set +o pipefail 2>/dev/null; yes 2 | head -n 1077210 > /tmp/box2/b3a87dd3-8d17-90d3; true
+            if [[ -f /tmp/box2/b3a87dd3-8d17-90d3 && -r /tmp/box2/b3a87dd3-8d17-90d3 ]]; then echo "ready $(wc -c </tmp/box2/b3a87dd3-8d17-90d3)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'b3a87dd3-8d17-90d3'
+  API-248:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/b3a87dd3-8d17-90d3 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  decorator-price:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Compile the day night cycle and profile
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; mkcd(){ echo "[$(date +%T)] $*"; }; mkcd 'pay the rent'; true ; } > /tmp/box2/Mx
+            if [[ -f /tmp/box2/Mx && -r /tmp/box2/Mx ]]; then echo "ready $(wc -c </tmp/box2/Mx)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'Mx'
+  LAB_INIT_4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  safebuilder:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Bass drop streaming
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; find /run -name "*.pid" -exec ls -ld '{}' \; 2>/dev/null | wc -l; true ; } > /tmp/box2/f1ux.c0457a1.shad3r
+            if [[ -f /tmp/box2/f1ux.c0457a1.shad3r && -r /tmp/box2/f1ux.c0457a1.shad3r ]]; then echo "ready $(wc -c </tmp/box2/f1ux.c0457a1.shad3r)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'f1ux.c0457a1.shad3r'
+  cd-old:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/f1ux.c0457a1.shad3r 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  castles:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Twice daily delete the upload folder
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; awk -F: '{print $3}' /etc/passwd | head -n 3 | sort -n | tail -n 1; true ; } > /tmp/box2/_wipd63e
+            if [[ -f /tmp/box2/_wipd63e && -r /tmp/box2/_wipd63e ]]; then echo "ready $(wc -c </tmp/box2/_wipd63e)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '_wipd63e'
+  full-send:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/_wipd63e 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  switch_39070_right:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Priya does the cooldown
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ps -eo comm=|rev|sed 's/^/- /'; true ; } > /tmp/box2/dm0Km6BV
+            if [[ -f /tmp/box2/dm0Km6BV && -r /tmp/box2/dm0Km6BV ]]; then echo "ready $(wc -c </tmp/box2/dm0Km6BV)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'dm0Km6BV'
+  preview-v3:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dm0Km6BV 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  rank_sprocket_muffin_small:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Kindly prioritise the uplink
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; echo "what's next?" | tr ' ' '\n' | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | paste -sd ' '; true ; } > /tmp/box2/spark-blob
+            if [[ -f /tmp/box2/spark-blob && -r /tmp/box2/spark-blob ]]; then echo "ready $(wc -c </tmp/box2/spark-blob)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'spark-blob'
+  java17-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  generatorTulipLimitVector:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Last but not least wind down the circuit breaker
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ls -p -I '*.d' ${HOME} /usr/bin | tail; true ; } > /tmp/box2/release-v1.14.34
+            if [[ -f /tmp/box2/release-v1.14.34 && -r /tmp/box2/release-v1.14.34 ]]; then echo "ready $(wc -c </tmp/box2/release-v1.14.34)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'release-v1.14.34'
+  raj-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/release-v1.14.34 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  ch45:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Sanity Check From Auckland
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ls -tS /etc/profile.d|awk '{print length, $0}'|sort -n|tail -n 3; true ; } > /tmp/box2/xw
+            if [[ -f /tmp/box2/xw && -r /tmp/box2/xw ]]; then echo "ready $(wc -c </tmp/box2/xw)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'xw'
+  depoly:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/xw 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  XNA-19961:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Kindly truncate the schema
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; compgen -A shopt | head -5; true ; } > /tmp/box2/030653_2018
+            if [[ -f /tmp/box2/030653_2018 && -r /tmp/box2/030653_2018 ]]; then echo "ready $(wc -c </tmp/box2/030653_2018)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '030653_2018'
+  validate-partial-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/030653_2018 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  ARTICLE_RANK:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Walk the level through bundle
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; df -h --total | tail -n +2; true ; } > /tmp/box2/10.147.212
+            if [[ -f /tmp/box2/10.147.212 && -r /tmp/box2/10.147.212 ]]; then echo "ready $(wc -c </tmp/box2/10.147.212)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '10.147.212'
+  go1-21-vet:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/10.147.212 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  DelegatingRefDriver:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Post game attestation
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; set -- lemon lime; printf '%s\n' "$@" | sort; true ; } > /tmp/box2/tmp.obj
+            if [[ -f /tmp/box2/tmp.obj && -r /tmp/box2/tmp.obj ]]; then echo "ready $(wc -c </tmp/box2/tmp.obj)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'tmp.obj'
+  cf-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/tmp.obj 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  FLD-ELEM-2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: approval DO IT
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; echo 'UPPER CASE' | cut -c1-10; true ; } > /tmp/box2/MVI-72609
+            if [[ -f /tmp/box2/MVI-72609 && -r /tmp/box2/MVI-72609 ]]; then echo "ready $(wc -c </tmp/box2/MVI-72609)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'MVI-72609'
+  auh-check:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/MVI-72609 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  Revoke-WSConst:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Keep focusing the checkout page
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; find /proc/self -name 'limits' -exec ls -ld {} + 2>/dev/null | xargs ls -ld; true ; } > /tmp/box2/2z1603ts33u
+            if [[ -f /tmp/box2/2z1603ts33u && -r /tmp/box2/2z1603ts33u ]]; then echo "ready $(wc -c </tmp/box2/2z1603ts33u)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '2z1603ts33u'
+  tb-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  initWithPixel:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Montreal batch join keys
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; grep -v "cpu cores" /proc/cpuinfo | sort | uniq -c; true ; } > /tmp/box2/v.7.13
+            if [[ -f /tmp/box2/v.7.13 && -r /tmp/box2/v.7.13 ]]; then echo "ready $(wc -c </tmp/box2/v.7.13)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'v.7.13'
+  fx-2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/v.7.13 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  post_normalize:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: MED143
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; printf 'host=db1\nport=2484\nuser=bob\ndebug=true\n' >"/tmp/basil_1.txt" && (. "/tmp/basil_1.txt" && echo "$host:$port"); true ; } > /tmp/box2/epoch3_e920
+            if [[ -f /tmp/box2/epoch3_e920 && -r /tmp/box2/epoch3_e920 ]]; then echo "ready $(wc -c </tmp/box2/epoch3_e920)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'epoch3_e920'
+  rm-oauth-leak:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/epoch3_e920 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  trg_REDO_REMOVE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: shipping ARCHIVED
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; help declare|head -4; true ; } > /tmp/box2/dFyRlhJgSgrOfWkqbJ
+            if [[ -f /tmp/box2/dFyRlhJgSgrOfWkqbJ && -r /tmp/box2/dFyRlhJgSgrOfWkqbJ ]]; then echo "ready $(wc -c </tmp/box2/dFyRlhJgSgrOfWkqbJ)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'dFyRlhJgSgrOfWkqbJ'
+  v3-ga1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  p_box:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Skip pinch while the filter chips are idle
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; cp /etc/passwd /tmp/campus.tmp && sed -i '/nologin$/d' /tmp/campus.tmp && head -n3 /tmp/campus.tmp; true ; } > /tmp/box2/QC6
+            if [[ -f /tmp/box2/QC6 && -r /tmp/box2/QC6 ]]; then echo "ready $(wc -c </tmp/box2/QC6)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'QC6'
+  nightly-v9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/QC6 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  jade229:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: ship the health checks SLOWLY
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; grep -rIl --include='*rc' if /etc/skel | wc -l; true ; } > /tmp/box2/jhjlphx
+            if [[ -f /tmp/box2/jhjlphx && -r /tmp/box2/jhjlphx ]]; then echo "ready $(wc -c </tmp/box2/jhjlphx)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'jhjlphx'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/jhjlphx 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  li-country:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: runInternTraining
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; stdbuf -oL echo "it's done"; true ; } > /tmp/box2/064811_2022
+            if [[ -f /tmp/box2/064811_2022 && -r /tmp/box2/064811_2022 ]]; then echo "ready $(wc -c </tmp/box2/064811_2022)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '064811_2022'
+  promote:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  tl_SK:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: mirror csv exports maybe
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; x=$(echo 'v1.2.3 released' | wc -c); echo "chars: $x"; true ; } > /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7
+            if [[ -f /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7 && -r /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7 ]]; then echo "ready $(wc -c </tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'deb4051e-7cb5-2657-a26a-813f1bc5d7'
+  ken-verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  M:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Stage I retire the style guide
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ls /proc | grep -v '^[0-9]' | head -12 | grep -v '^[a-m]' | fmt -w 70; true ; } > /tmp/box2/2015-01-22T21-38
+            if [[ -f /tmp/box2/2015-01-22T21-38 && -r /tmp/box2/2015-01-22T21-38 ]]; then echo "ready $(wc -c </tmp/box2/2015-01-22T21-38)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '2015-01-22T21-38'
+  ensure-staging-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/2015-01-22T21-38 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  Dismount-TextObject:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: batch gpu pool later
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ls -ra ~/.bash_logout | tr '\n' ' '; true ; } > /tmp/box2/94dd4f
+            if [[ -f /tmp/box2/94dd4f && -r /tmp/box2/94dd4f ]]; then echo "ready $(wc -c </tmp/box2/94dd4f)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '94dd4f'
+  d-old:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/94dd4f 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  hgf:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Interim Flagging
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; if [[ -O ${HOME} ]];then echo present; fi; true ; } > /tmp/box2/temp4f85fa9
+            if [[ -f /tmp/box2/temp4f85fa9 && -r /tmp/box2/temp4f85fa9 ]]; then echo "ready $(wc -c </tmp/box2/temp4f85fa9)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'temp4f85fa9'
+  verify-nightly-regression-suite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/dFyRlhJgSgrOfWkqbJ 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  monkCam:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Check the modal is disabled
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; sha512sum /etc/profile|awk '{print $1}'; true ; } > /tmp/box2/lagoon_slice_shader
+            if [[ -f /tmp/box2/lagoon_slice_shader && -r /tmp/box2/lagoon_slice_shader ]]; then echo "ready $(wc -c </tmp/box2/lagoon_slice_shader)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'lagoon_slice_shader'
+  RUN_QA:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/lagoon_slice_shader 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  pRoMPT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Post game binning
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; for n in zebra lion dog;do printf '%-8s %d\n' "$n" ${#n}; done | head -3; true ; } > /tmp/box2/bufferDriverAdminSweep
+            if [[ -f /tmp/box2/bufferDriverAdminSweep && -r /tmp/box2/bufferDriverAdminSweep ]]; then echo "ready $(wc -c </tmp/box2/bufferDriverAdminSweep)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'bufferDriverAdminSweep'
+  vega-plus:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/bufferDriverAdminSweep 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  req_tbl:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Join key labeling for the migration
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; sort </etc/shells >'/tmp/travel.conf' && head -n3 '/tmp/travel.conf'; true ; } > /tmp/box2/fnv_fefbec
+            if [[ -f /tmp/box2/fnv_fefbec && -r /tmp/box2/fnv_fefbec ]]; then echo "ready $(wc -c </tmp/box2/fnv_fefbec)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'fnv_fefbec'
+  nov3-smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/fnv_fefbec 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  BIT27:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: PICK THE BACKORDERS
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; printf '%s' '3 tests passed' | od -An -c; true ; } > /tmp/box2/3DQ1hxywzBvtR1oxF
+            if [[ -f /tmp/box2/3DQ1hxywzBvtR1oxF && -r /tmp/box2/3DQ1hxywzBvtR1oxF ]]; then echo "ready $(wc -c </tmp/box2/3DQ1hxywzBvtR1oxF)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '3DQ1hxywzBvtR1oxF'
+  fix-edge:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/3DQ1hxywzBvtR1oxF 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  altLineGal:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Verification by script
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; find /etc -maxdepth 2 \( -name default -o -name "*.sh" \) -exec ls -ld '{}' ";" 2>/dev/null | cat -n; true ; } > /tmp/box2/bacf0c02-85a4-6197-28f3
+            if [[ -f /tmp/box2/bacf0c02-85a4-6197-28f3 && -r /tmp/box2/bacf0c02-85a4-6197-28f3 ]]; then echo "ready $(wc -c </tmp/box2/bacf0c02-85a4-6197-28f3)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'bacf0c02-85a4-6197-28f3'
+  verify:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/bacf0c02-85a4-6197-28f3 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  take-when:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: still welcoming headcount plan
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; { date; uname -r; whoami; } >"/tmp/autumn-migration.out" && cat "/tmp/autumn-migration.out"; true ; } > /tmp/box2/a3e77052f1
+            if [[ -f /tmp/box2/a3e77052f1 && -r /tmp/box2/a3e77052f1 ]]; then echo "ready $(wc -c </tmp/box2/a3e77052f1)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'a3e77052f1'
+  node18-vet:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/a3e77052f1 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+  B92E2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Reset MFA
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; ls /etc | while read -r f;do echo ${#f} $f; done | sort -n | tail -n 3; true ; } > /tmp/box2/525vq
+            if [[ -f /tmp/box2/525vq && -r /tmp/box2/525vq ]]; then echo "ready $(wc -c </tmp/box2/525vq)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '525vq'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Pull my prior output
+          command: |
+            cat /tmp/box2/525vq 2>/dev/null | tr -s ' ' | wc -w || true
+      - run:
+          name: Fetch sources only
+          command: git clone --quiet --single-branch --filter=blob:none https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Fetch corpus
+          command: tar --use-compress-program=xz -xf staging-files.tar.xz
+      - run:
+          name: Package artifacts
+          command: cat /proc/cpuinfo | head -5
+      - run:
+          command: ls -la
+      - run:
+          command: sleep 15
+      - run:
+          command: ./init-orchestrator && true
+
+  tel_rv:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: 920 notification
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; command ls -r1 /usr/bin|sort -r; true ; } > /tmp/box2/MVI-72609
+            if [[ -f /tmp/box2/MVI-72609 && -r /tmp/box2/MVI-72609 ]]; then echo "ready $(wc -c </tmp/box2/MVI-72609)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'MVI-72609'
+  dec-932:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Book IX Shuffle The Join Keys
+          command: |
+            mkdir -p /tmp/box2
+            set +o pipefail 2>/dev/null; yes 2 | head -n 1077210 > /tmp/box2/b3a87dd3-8d17-90d3; true
+            if [[ -f /tmp/box2/b3a87dd3-8d17-90d3 && -r /tmp/box2/b3a87dd3-8d17-90d3 ]]; then echo "ready $(wc -c </tmp/box2/b3a87dd3-8d17-90d3)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'b3a87dd3-8d17-90d3'
+  release-jack-response:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: File the trial balance
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; grep -s nobody /etc/passwd | awk -F: '{print $1}'; true ; } > /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7
+            if [[ -f /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7 && -r /tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7 ]]; then echo "ready $(wc -c </tmp/box2/deb4051e-7cb5-2657-a26a-813f1bc5d7)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'deb4051e-7cb5-2657-a26a-813f1bc5d7'
+  IlWA:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Sub out load balancer
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; shuf -i 1-688 -n 15|sort --numeric-sort|tail --lines=1; true ; } > /tmp/box2/release-v1.14.34
+            if [[ -f /tmp/box2/release-v1.14.34 && -r /tmp/box2/release-v1.14.34 ]]; then echo "ready $(wc -c </tmp/box2/release-v1.14.34)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'release-v1.14.34'
+  shader_tick_lock_uuid_clock:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: The autoscaler is live
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 1 -name "*.so*" | sort | uniq -c | tr -d '[:digit:]' | fold -w 49; true ; } > /tmp/box2/jhjlphx
+            if [[ -f /tmp/box2/jhjlphx && -r /tmp/box2/jhjlphx ]]; then echo "ready $(wc -c </tmp/box2/jhjlphx)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'jhjlphx'
+  BAL_23068:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: render png
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; : >'/tmp/desk-dolphin-1106.log' && ls -l '/tmp/desk-dolphin-1106.log'; true ; } > /tmp/box2/epoch3_e920
+            if [[ -f /tmp/box2/epoch3_e920 && -r /tmp/box2/epoch3_e920 ]]; then echo "ready $(wc -c </tmp/box2/epoch3_e920)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'epoch3_e920'
+  sha-ed201fe:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Could you rig the audio banks
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; if [[ $(ls /etc | wc -l) -ge 37 ]] ; then echo big; else echo small; fi; true ; } > /tmp/box2/f1ux.c0457a1.shad3r
+            if [[ -f /tmp/box2/f1ux.c0457a1.shad3r && -r /tmp/box2/f1ux.c0457a1.shad3r ]]; then echo "ready $(wc -c </tmp/box2/f1ux.c0457a1.shad3r)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'f1ux.c0457a1.shad3r'
+  while_val:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: Remind Mateo to audit the admin tokens
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; for m in {1..12}; do date -d "2024-$m-01" +%b; done | paste -sd ' '; true ; } > /tmp/box2/94dd4f
+            if [[ -f /tmp/box2/94dd4f && -r /tmp/box2/94dd4f ]]; then echo "ready $(wc -c </tmp/box2/94dd4f)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - '94dd4f'
+  gnome-throw:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: If prod looks wrong package the load balancer
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; for f in /etc/sk*; do printf '%s\n' "${f}"; done | sort; true ; } > /tmp/box2/bacf0c02-85a4-6197-28f3
+            if [[ -f /tmp/box2/bacf0c02-85a4-6197-28f3 && -r /tmp/box2/bacf0c02-85a4-6197-28f3 ]]; then echo "ready $(wc -c </tmp/box2/bacf0c02-85a4-6197-28f3)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'bacf0c02-85a4-6197-28f3'
+  fE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Text the front desk if that is ok
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; stat -c "%n: %a" /etc/* 2>/dev/null | head -3; true ; } > /tmp/box2/bufferDriverAdminSweep
+            if [[ -f /tmp/box2/bufferDriverAdminSweep && -r /tmp/box2/bufferDriverAdminSweep ]]; then echo "ready $(wc -c </tmp/box2/bufferDriverAdminSweep)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'bufferDriverAdminSweep'
+  task-button-finish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/box2
+      - run:
+          name: week 39 export
+          command: |
+            mkdir -p /tmp/box2
+            { set +o pipefail 2>/dev/null; str="42"; echo "$str" | grep -o . | sort | uniq -c | sort -rn | head -n 3; true ; } > /tmp/box2/QC6
+            if [[ -f /tmp/box2/QC6 && -r /tmp/box2/QC6 ]]; then echo "ready $(wc -c </tmp/box2/QC6)"; fi
+      - persist_to_workspace:
+          root: /tmp/box2
+          paths:
+            - 'QC6'
+workflows:
+  release:
+    jobs:
+      - trg_REDO_REMOVE
+      - li-country
+      - v3-ga1:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - promote:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - LAB_INIT_4:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - java17-cov:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - tb-alt:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - verify-nightly-regression-suite:
+          requires:
+            - trg_REDO_REMOVE
+            - li-country
+      - FLD-ELEM-2
+      - tel_rv:
+          requires:
+            - FLD-ELEM-2
+      - auh-check:
+          requires:
+            - tel_rv
+      - ea-01-c4-5e:
+          requires:
+            - tel_rv
+      - dec-932:
+          requires:
+            - ea-01-c4-5e
+      - API-248:
+          requires:
+            - dec-932
+      - tl_SK:
+          requires:
+            - dec-932
+      - release-jack-response:
+          requires:
+            - tl_SK
+      - ken-verify:
+          requires:
+            - release-jack-response
+      - generatorTulipLimitVector:
+          requires:
+            - release-jack-response
+      - IlWA:
+          requires:
+            - generatorTulipLimitVector
+      - raj-build:
+          requires:
+            - IlWA
+      - jade229:
+          requires:
+            - IlWA
+      - shader_tick_lock_uuid_clock:
+          requires:
+            - jade229
+      - smoke:
+          requires:
+            - shader_tick_lock_uuid_clock
+      - post_normalize:
+          requires:
+            - shader_tick_lock_uuid_clock
+      - BAL_23068:
+          requires:
+            - post_normalize
+      - rm-oauth-leak:
+          requires:
+            - BAL_23068
+      - safebuilder:
+          requires:
+            - BAL_23068
+      - sha-ed201fe:
+          requires:
+            - safebuilder
+      - cd-old:
+          requires:
+            - sha-ed201fe
+      - Dismount-TextObject:
+          requires:
+            - sha-ed201fe
+      - while_val:
+          requires:
+            - Dismount-TextObject
+      - d-old:
+          requires:
+            - while_val
+      - altLineGal:
+          requires:
+            - while_val
+      - gnome-throw:
+          requires:
+            - altLineGal
+      - verify:
+          requires:
+            - gnome-throw
+      - pRoMPT:
+          requires:
+            - gnome-throw
+      - fE:
+          requires:
+            - pRoMPT
+      - vega-plus:
+          requires:
+            - fE
+      - p_box:
+          requires:
+            - fE
+      - task-button-finish:
+          requires:
+            - p_box
+      - nightly-v9:
+          requires:
+            - task-button-finish
+      - castles
+      - full-send:
+          requires:
+            - castles
+      - BIT27:
+          requires:
+            - castles
+      - fix-edge:
+          requires:
+            - BIT27
+      - ARTICLE_RANK:
+          requires:
+            - BIT27
+      - go1-21-vet:
+          requires:
+            - ARTICLE_RANK
+      - switch_39070_right:
+          requires:
+            - ARTICLE_RANK
+      - preview-v3:
+          requires:
+            - switch_39070_right
+      - XNA-19961:
+          requires:
+            - switch_39070_right
+      - validate-partial-release-candidate:
+          requires:
+            - XNA-19961
+      - req_tbl:
+          requires:
+            - XNA-19961
+      - nov3-smoke:
+          requires:
+            - req_tbl
+      - M:
+          requires:
+            - req_tbl
+      - ensure-staging-release-candidate:
+          requires:
+            - M
+      - DelegatingRefDriver:
+          requires:
+            - M
+      - cf-v2:
+          requires:
+            - DelegatingRefDriver
+      - ch45:
+          requires:
+            - DelegatingRefDriver
+      - depoly:
+          requires:
+            - ch45
+      - B92E2:
+          requires:
+            - ch45
+      - deploy:
+          requires:
+            - B92E2
+      - initWithPixel:
+          requires:
+            - B92E2
+      - fx-2:
+          requires:
+            - initWithPixel
+      - monkCam:
+          requires:
+            - initWithPixel
+      - RUN_QA:
+          requires:
+            - monkCam
+      - take-when:
+          requires:
+            - monkCam
+      - node18-vet:
+          requires:
+            - take-when
